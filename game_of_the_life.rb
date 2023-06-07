@@ -1,48 +1,83 @@
-require_relative 'celula'
+require_relative 'cell'
 
-input = File.open('input.txt').readlines
+matrix = File.open('input.txt').readlines
 
 puts "incio"
-puts input
+puts matrix
 
-celulas = []
-for i in 0...input.length
-  for j in 0...input[i].length
-    if input[i][j] == '*'
-      celulas.push(Celula.new(i, j))
+cells = []
+for y in 0...matrix.length
+  for x in 0...matrix[y].length
+    if matrix[y][x] == '*'
+      cells.push(Cell.new(x, y))
     end
   end
 end
-puts celulas.length
-celulas.each do |celula|
-  for i in celula.posicionX-1 .. celula.posicionX+1
-    for j in celula.posicionY-1 .. celula.posicionY+1
-      if i == celula.posicionX && j == celula.posicionY
+
+
+dead_cells = Array.new
+
+Bounds = Struct.new(:y_top, :y_bottom, :x_left, :x_right)
+
+def get_cell_bounds(matrix, cell)
+  bounds = Bounds.new(
+    cell.positionY - 1, 
+    cell.positionY + 1,
+    cell.positionX - 1,
+    cell.positionX + 1
+  )
+  
+  if cell.positionY == 0 then bounds.y_top = 0 end
+  if cell.positionY == matrix.length - 1 then bounds.y_bottom -= 1 end
+  if cell.positionX == 0 then bounds.x_left = 0 end
+  if cell.positionX == matrix[0].length - 1 then bounds.x_right -= 1 end
+    
+  return bounds
+end
+
+
+def count_neighbors(matrix, cell, bounds)
+  for y in bounds.y_top .. bounds.y_bottom
+    for x in bounds.x_left .. bounds.x_right
+
+      # Ignora la misma casilla de la cell
+      if x == cell.positionX && y == cell.positionY
         next
       end
 
-      if i < 0 || j < 0 || i >= input.length || j >= input[i].length
-        puts "pos"
-        puts celula.posicionX, celula.posicionY
-        puts ""
-        next
-      end
-
-      if input[i][j] == '*'
-        celula.vecinos += 1
+      # Cuenta los vecinos
+      if matrix[y][x] == '*'
+        cell.neighbors += 1
       end
     end
   end
-  if(celula.vecinos < 2 || celula.vecinos > 3)
-    input[celula.posicionX][celula.posicionY] = '.'
-    puts "Celula eliminada"
-    puts "Posicion: #{celula.posicionX}, #{celula.posicionY}"
-    celulas.delete(celula) 
+end
+
+
+def kill_cell(matrix, cell, dead_cells)
+  if(cell.neighbors < 2 || cell.neighbors > 3)
+    matrix[cell.positionY][cell.positionX] = '.'
+    dead_cells.push(cell)
   end
 end
 
-puts input
 
-celulas.each do |celula|
 
+cells.each do |cell|
+  bounds = get_cell_bounds(matrix, cell)
+  count_neighbors(matrix, cell, bounds)
+  kill_cell(matrix, cell, dead_cells)
 end
+
+
+# Eliminar celulas muertas
+dead_cells.each do |cell|
+  cells.delete(cell)
+end
+dead_cells.clear
+
+
+puts cells
+
+puts ""
+puts matrix
