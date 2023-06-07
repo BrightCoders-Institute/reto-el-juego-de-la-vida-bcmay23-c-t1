@@ -58,24 +58,25 @@ Esta actividad tiene como objetivos:
 # ✅ Indicadores de cumplimiento
 
 1. Sintaxis y semántica de Ruby:
+
    - El código debe estar escrito utilizando la sintaxis correcta de Ruby.
    - Se deben utilizar las convenciones de nomenclatura adecuadas de Ruby.
-
 2. Uso de RuboCop:
-   - Se debe utilizar RuboCop como herramienta de análisis estático para mejorar la calidad del código Ruby.
 
+   - Se debe utilizar RuboCop como herramienta de análisis estático para mejorar la calidad del código Ruby.
 3. Programación orientada a objetos:
+
    - Deben aplicarse los conceptos fundamentales de la programación orientada a objetos, como encapsulación, herencia, polimorfismo y abstracción.
    - El código debe ser modular, reutilizable y fácil de mantener.
-
 4. Uso de polimorfismo en lugar de banderas booleanas:
-   - Deben identificarse situaciones en las que se utilizan banderas booleanas y reemplazarlas por polimorfismo.
 
+   - Deben identificarse situaciones en las que se utilizan banderas booleanas y reemplazarlas por polimorfismo.
 5. Desarrollo basado en pruebas:
+
    - Se deben desarrollar pruebas unitarias y funcionales utilizando RSpec y/o MiniTest.
    - Las pruebas deben garantizar la calidad y robustez del código.
-
 6. Aplicación de los principios SOLID:
+
    - Deben aplicarse los principios SOLID (Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, Dependency Inversion) en el diseño y desarrollo del software.
    - El código debe ser modular, flexible y fácil de mantener.
 
@@ -135,12 +136,7 @@ Debes escribir un programa que acepte una cuadrícula arbitraria de células y m
 La posición inicial de entrada podría ser un archivo de texto que se vea así:
 
 ```
-Generation 1:
-4 8
-........
-....*...
-...**...
-........
+
 ```
 
 Y la salida podría verse así:
@@ -157,13 +153,14 @@ Generation 2:
 # 🚨 Requerimientos no funcionales
 
 - Calidad:
+
   - Aplicar el estilo de código definido por la comunidad, utilizando RuboCop como herramienta de apoyo.
   - Incluir pruebas unitarias para garantizar la calidad del código.
-
 - Desempeño y escalabilidad:
-  - Permitir la ejecución desde la línea de comandos y mostrar la salida en la consola de manera eficiente y rápida.
 
+  - Permitir la ejecución desde la línea de comandos y mostrar la salida en la consola de manera eficiente y rápida.
 - Código fuente:
+
   - Desarrollar una solución orientada a objetos, siguiendo los principios de la programación orientada a objetos (POO).
   - Escribir métodos pequeños y con un solo propósito para mejorar la legibilidad y el mantenimiento del código.
   - Aplicar los principios SOLID para lograr un diseño modular, flexible y de fácil extensibilidad.
@@ -173,5 +170,5 @@ Generation 2:
 - [Desarrollo Basado en Pruebas](https://brightcoders-2.gitbook.io/brightcoders-handbook/recursos/ruby-on-rails/desarrollo-basado-en-pruebas)
 - [RuboCop](https://brightcoders-2.gitbook.io/brightcoders-handbook/recursos/ruby-on-rails/rubocop)
 - [Principios SOLID y Polimorfismo](https://brightcoders-2.gitbook.io/brightcoders-handbook/recursos/ruby-on-rails/solid-and-polimorfismo)
-- [Git & Github](https://brightcoders-2.gitbook.io/brightcoders-handbook/recursos/git-and-github/git-and-github)
-- [Principios SOLID, DRY, KISS & YAGNI](https://brightcoders-2.gitbook.io/brightcoders-handbook/codigo-limpio/principios)
+- [Git &amp; Github](https://brightcoders-2.gitbook.io/brightcoders-handbook/recursos/git-and-github/git-and-github)
+- [Principios SOLID, DRY, KISS &amp; YAGNI](https://brightcoders-2.gitbook.io/brightcoders-handbook/codigo-limpio/principios)
