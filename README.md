@@ -16,3 +16,11 @@ Things you may want to cover:
 - How to Use the Project.
 - Credits
 - Badges
+
+
+#### Comits  - Example
+Re factoring: We change the code structure. Now the game of live is working
+
+    Co-authored-by: branyoe <bhernandez1@ucol.mx>    
+    Co-authored-by: Ivan Silva <ivansilva.me@gmail.com>
+    Co-authored-by: Alejandro <alejo082495@gmail.com>
