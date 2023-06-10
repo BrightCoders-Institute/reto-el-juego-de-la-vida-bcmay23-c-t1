@@ -10,9 +10,9 @@ class GameOfLifeCustom < GameOfLife
   end
 
   def show_grid
-    @width.times do |i|
-      @height.times do |j|
-        print @grid[i][j] ? "#{@char_live_cell}  " : "#{@char_dead_cell}  "
+    @height.times do |axis_y|
+      @width.times do |axis_x|
+        print @grid[axis_y][axis_x] ? "#{@char_live_cell}  " : "#{@char_dead_cell}  "
       end
       puts
     end
